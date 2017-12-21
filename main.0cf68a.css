@@ -641,6 +641,8 @@ body {
  min-height:100%;
  left:300px;
  width:auto;
+ background: url(/img/background.jpg);
+ background-attachment: fixed;
 }
 .mid-col.show {
  background:none;

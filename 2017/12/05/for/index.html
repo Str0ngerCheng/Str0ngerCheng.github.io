@@ -357,13 +357,23 @@
     margin:0 0 0 8px;
  }
   </style>
-  <div class="custome_share">
-  <div class="bdsharebuttonbox" style="float: right;">
-    <a  class="fa-plus fa" data-cmd="more"></a>
+  <div class="share-btn share-icons tooltip-left">
+    <div class="tooltip tooltip-east">
+      <span id="share_btn" class="tooltip-item">
+        <a href="javascript:;" class="share-outer">
+          <i class="icon icon-share"></i>
+        </a>
+      </span>
+
+    </div>
+  </div>
+  <div id="c_share" class="custome_share">
+  <div class="bdsharebuttonbox" style="float: right;margin-top:-60px;display: none">
     <a  class="icon-qzone" data-cmd="qzone" title="分享到QQ空间"></a>
     <a  class="icon-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
     <a  class="icon-weixin" data-cmd="weixin" title="分享到微信"></a>
     <a  class="icon-douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a  class="fa-plus fa" data-cmd="more"></a>
   </div>
   </div>
   <script>
@@ -396,6 +406,17 @@
       }
     };
     with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+   <script>
+      var timer=null;
+            document.getElementById("share_btn").mouseover(function(){
+                clearTimeout(timer);
+                document.getElementById("c_share").show();
+            }).mouseout(function(){
+                timer=setTimeout(function(){
+                    $('c_share').hide();
+                },100)
+            });
+    </script>
     <!-- JiaThis Button END -->
 
       
