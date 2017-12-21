@@ -321,82 +321,39 @@
 
       
       
-          
-  <!-- JiaThis Button BEGIN -->
-  <style type="text/css">
-  .bd_weixin_popup_foot{
-    display: none;
-    height:0;
-  }
-  .bd_weixin_popup{
-    height:260px !important;
-  }
-  .bd_weixin_popup_bg {
-    position: fixed;
-    width: 100% !important;
-    height: 100% !important;
-    background: #000;
-    opacity: .7;
-    filter: alpha(opacity=50);
-    left: 0 !important;
-    top: 0 !important
- }
- .custome_share a{
-    display:inline-block;
-    float: left;
-    background: #999;
-    font-size: 18px !important;
-    color: #fff;
-    width: 28px;
-    height: 28px;
-    line-height: 28px;
-    padding-left: 0;
-    text-align: center;
-    border-radius: 50%;
-    background: rgba(128,128,128,.9);
-    margin:0 0 0 8px;
- }
-  </style>
-  <div class="custome_share">
-  <div class="bdsharebuttonbox" style="float: right;">
-    <a  class="fa-plus fa" data-cmd="more"></a>
-    <a  class="icon-qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-    <a  class="icon-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
-    <a  class="icon-weixin" data-cmd="weixin" title="分享到微信"></a>
-    <a  class="icon-douban" data-cmd="douban" title="分享到豆瓣网"></a>
+        	
+
+	<!--MOB SHARE BEGIN-->
+	<div class="share-btn share-icons tooltip-left">
+		<div class="tooltip tooltip-east">
+		<div class="-mob-share-open">
+			<span class="tooltip-item">
+				<a href="javascript:;" class="share-outer">
+					<i class="icon icon-share"></i>
+				</a>
+			</span>
+		</div>
+		</div>
+	</div>
+	<div class="-mob-share-ui -mob-share-ui-theme -mob-share-ui-theme-slide-right" style="display: none">
+    <ul class="-mob-share-list">
+        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+        <li class="-mob-share-qzone"><p>QQ空间</p></li>
+        <li class="-mob-share-weixin"><p>微信</p></li>
+        <li class="-mob-share-qq"><p>QQ好友</p></li>
+        <li class="-mob-share-douban"><p>豆瓣</p></li>
+        <li class="-mob-share-facebook"><p>Facebook</p></li>
+        <li class="-mob-share-twitter"><p>Twitter</p></li>
+        <li class="-mob-share-google"><p>Google</p></li>
+    </ul>
+    <div class="-mob-share-close">取消</div>
   </div>
-  </div>
-  <script>
-    window._bd_share_config={
-      "common":{
-        "bdSnsKey":{},
-        "bdText":"",
-        "bdMini":"2",
-        "bdMiniList":false,
-        "bdPic":"",
-        "bdStyle":"2",
-        "bdSize":"16"
-      },
-      "share":{},
-      "image":{
-        "viewList":[
-        "qzone","tsina","fbook","renren"
-        ],
-        "viewText":"分享到："
-        ,"viewSize":"16"
-      },
-      "selectShare":{
-        "bdContainerClass":null,
-        "bdSelectMiniList":[
-        "qzone",
-        "tsina",
-        "fbook",
-        "renren"
-        ]
-      }
-    };
-    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-    <!-- JiaThis Button END -->
+  <div class="-mob-share-ui-bg"></div>
+	<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey={{ theme.shareSDKappkey }}"></script>
+
+	<!--MOB SHARE END-->
+
+
 
       
       <div class="clearfix"></div>
@@ -587,11 +544,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo主题+配置</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo主题+配置</a>
               </li>
             
             <div class="clearfix"></div>
