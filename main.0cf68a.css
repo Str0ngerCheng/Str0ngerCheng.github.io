@@ -332,8 +332,8 @@ svg:not(:root) {
 pre {
  overflow:auto;
  white-space:pre;
- white-space:pre-wrap;
- word-wrap:break-word
+ /* white-space:pre-wrap; */
+ word-wrap:break-word;
 }
 code,kbd,pre,samp {
  font-family:monospace,monospace;
@@ -884,7 +884,7 @@ body {
  overflow:auto;
  color:#fff;
  font-size:.9em;
- line-height:22.400000000000002px
+ /* line-height:22.400000000000002px */
 }
 .article-entry .gist .gist-file .gist-data .line-numbers,.article-entry .highlight .gutter pre,.article-entry .highlight .gutter pre .line {
  color:#666
@@ -922,7 +922,9 @@ body {
 .article-entry .highlight figcaption {
  color:highlight-comment;
  line-height:1em;
- margin-bottom:1em
+ margin-bottom:1em;
+ font-style: italic;
+ font-weight: 600;
 }
 .article-entry .highlight figcaption:after,.article-entry .highlight figcaption:before {
  content:"";
@@ -936,7 +938,7 @@ body {
 }
 .article-entry .highlight .gutter pre {
  text-align:right;
- padding-right:20px
+ padding-right:20px;
 }
 .article-entry .highlight .gutter pre .line {
  text-shadow:none
@@ -1983,7 +1985,7 @@ pre .css~* .id,pre .id {
  color:#657b83;
  border:1px solid #ccc;
  text-shadow:0 1px #444;
- font-family:Menlo,Monaco,Andale Mono,lucida console,Courier New,monospace
+ font-family:Menlo,Monaco,Andale Mono,lucida console,Courier New,monospace;
 }
 .article-entry pre code {
  font-size:14px
@@ -1992,10 +1994,10 @@ pre .css~* .id,pre .id {
  width:100%;
  border:1px solid #dedede;
  margin:15px 0;
- border-collapse:collapse
+ border-collapse:collapse;
 }
 .article-entry table td,.article-entry table tr {
- height:35px
+ height:35px;
 }
 .article-entry table thead tr {
  background:#f8f8f8
