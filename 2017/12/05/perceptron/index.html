@@ -8,18 +8,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://str0ngercheng.chengbowen.cn">
-  <title>Archives: 2017/12 | 4mE的博客</title>
+  <title>机器学习——感知机学习 | 4mE的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="中国地质大学14级Boy 此为博客一枚。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="4mE的博客">
-<meta property="og:url" content="http://str0ngercheng.chengbowen.cn/archives/2017/12/index.html">
+  <meta name="description" content="感知机（perceptron）是二类分类的新型分类模型，对应于输入空间（特征空间）中将实例划分为正负两类的分离超平面，属于判别模型。感知机学习旨在求出将训练数据进行线性划分的分离超平面，为此，导入基于误分类的损失函数，利用梯度下降法对损失函数进行极小化求得感知机模型。感知机学习算法具有简单而易于实现的优点，分为原始形式">
+<meta name="keywords" content="机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习——感知机学习">
+<meta property="og:url" content="http://str0ngercheng.chengbowen.cn/2017/12/05/perceptron/index.html">
 <meta property="og:site_name" content="4mE的博客">
-<meta property="og:description" content="中国地质大学14级Boy 此为博客一枚。">
+<meta property="og:description" content="感知机（perceptron）是二类分类的新型分类模型，对应于输入空间（特征空间）中将实例划分为正负两类的分离超平面，属于判别模型。感知机学习旨在求出将训练数据进行线性划分的分离超平面，为此，导入基于误分类的损失函数，利用梯度下降法对损失函数进行极小化求得感知机模型。感知机学习算法具有简单而易于实现的优点，分为原始形式和对偶形式.感知机预测是用学习得到的感知机模型对新的输入实例进行分类，是神经网络">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://str0ngercheng.chengbowen.cn/img/感知机模型.png">
+<meta property="og:updated_time" content="2018-07-26T12:07:19.539Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="4mE的博客">
-<meta name="twitter:description" content="中国地质大学14级Boy 此为博客一枚。">
+<meta name="twitter:title" content="机器学习——感知机学习">
+<meta name="twitter:description" content="感知机（perceptron）是二类分类的新型分类模型，对应于输入空间（特征空间）中将实例划分为正负两类的分离超平面，属于判别模型。感知机学习旨在求出将训练数据进行线性划分的分离超平面，为此，导入基于误分类的损失函数，利用梯度下降法对损失函数进行极小化求得感知机模型。感知机学习算法具有简单而易于实现的优点，分为原始形式和对偶形式.感知机预测是用学习得到的感知机模型对新的输入实例进行分类，是神经网络">
+<meta name="twitter:image" content="http://str0ngercheng.chengbowen.cn/img/感知机模型.png">
   
     <link rel="alternative" href="/atom.xml" title="4mE的博客" type="application/atom+xml">
   
@@ -226,37 +230,98 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-  
+            <article id="post-perceptron" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/perceptron/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:55:11.547Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/perceptron/">机器学习——感知机学习</a>
+    <h1 class="article-title" itemprop="name">
+      机器学习——感知机学习
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+       <!-- 显示阅读和评论数 -->
+       
+       <br/>
+       <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+       <span class="icon-sort"></span>
+       <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                 阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+       </span>
+       </a>
+       
+       
+        
+        <a href="/2017/12/05/perceptron/" class="archive-article-date">
+  	<time datetime="2017-12-05T02:55:11.547Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
+</a>
+        
+      </header>
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <p>感知机（perceptron）是二类分类的新型分类模型，对应于输入空间（特征空间）中将实例划分为正负两类的<font style="font-style:italic;color:#999;">分离超平面</font>，属于判别模型。感知机学习旨在求出将训练数据进行线性划分的分离超平面，为此，导入基于误分类的损失函数，利用梯度下降法对损失函数进行极小化求得感知机模型。感知机学习算法具有简单而易于实现的优点，分为原始形式和对偶形式.感知机预测是用学习得到的感知机模型对新的输入实例进行分类，是<font style="font-style:italic;color:#999;">神经网络与支持向量机</font>的基础。<br><a id="more"></a><br><!-- toc --></p>
+<h2 id="感知机模型"><a href="#感知机模型" class="headerlink" title="感知机模型"></a>感知机模型</h2><p>假设输入空间（特征空间）是$X\subseteq{R^n}$，输出空间是$Y=\lbrace{+1,-1}\rbrace$，输入$x\in X$表示实例的特征向量，对应于输入空间（特征空间）的点；输出$y\in{Y}$表示实例的类别。由输入空间到输出空间的如下函数$$f(x)=sign(w\cdot x+b)$$称为感知机。其中$w$和$b$为感知机模型参数，$w\in{R^n}$叫作权值或权值向量，$b\in R$叫作偏置。$w\cdot x$表示$w$和$x$的内积。$signx$是符号函数，即$$sign(x)=\begin{cases} +1,  &amp; {x \ge 0}\\ -1, &amp; {x&lt;0} \end{cases}$$感知机有如下几何解释:$w\cdot x+b=0$对应于特征空间$R^n$中的一个超平面$S$，其中$w$是超平面的法向量，$b$是超平面的截距。这个超平面将特征空间划分为两部分。位于两部分的点分别被分为正、负两类。因此超平面$S$称为分离超平面，如图所示。</p>
+<p></p><p align="center"><img src="/img/感知机模型.png" alt="感知机模型"></p><br>由训练数据集求得感知机模型的参数$w$和$b$，并对新输入的实例进行预测，给出其对应的输出类别。<p></p>
+<!-- toc -->
+<h2 id="感知机学习策略"><a href="#感知机学习策略" class="headerlink" title="感知机学习策略"></a>感知机学习策略</h2><p>假设训练数据集是线性可分的，感知机学习的目标是求得一个能够将训练数据集正实例点和负实例点完全正确分开的分离超平面。为了找出这样的超平面，即确定感知机模型参数$w$,$b$。需要确定一个学习策略，即定义(经验)损失函数并将损失函数极小化。感知机的损失函数通常采用误分类点到超平面的总距离$S$。为此，首先写出输入空间$R^n$中任一点$x_0$到超平面$S$的距离$$\frac{\lvert {w \cdot {x_0} + b} \rvert}{\lVert w \rVert}$$这里，$\lVert w \rVert$是$w$的$L_2$范数。其次，对于误分类的数据$(x_i,y_i)$来说$$-y_i(w\cdot x_i+b)&gt;0$$因此误分类点到超平面$S$的总距离为</p>
+<p>$$-\frac 1 {\lVert w \rVert}\sum_{x_i\in M}{y_i(w\cdot x_i+b)}$$不考虑$-\frac 1 {\lVert w \rVert}$，就得到感知机学习的损失函数。<br>给定训练数据集$T=\{(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)\}$，其中$x_i\in X=R^n$，$y_i\in Y=\{+1,-1\}$，$i=1,2,\cdots,N$。感知机$sign(w\cdot x+b)$学习的损失函数定义为</p>
+<p><font style="color:red;">$$\mathbf{-\sum_{x_i\in M}{y_i(w\cdot x_i+b)}}$$</font>其中$M$为误分类点的集合。这个损失函数就是感知机学习的经验函数。<br>感知机学习的策略是在假设空间中选取使损失函数式最小的模型参数$w$和$b$,即感知机模型。</p>
+<!-- toc -->
+<h2 id="感知机学习算法"><a href="#感知机学习算法" class="headerlink" title="感知机学习算法"></a>感知机学习算法</h2><p>感知学习算法是一个最有算法，它是求以下损失函数极小化问题解$$\min L(w,b)=-\sum_{x_i\in M}{y_i(w\cdot x_i+b)}$$其中$M$为误分类点的集合。<br>感知机学习算法是误分类驱动的，具体采用随机梯度下降法。首先，任意选取一个超平面$w_0,b_0$，然后用梯度下降法不断地极小化上述目标函数。极小化过程中不是一次使$M$中所有误分类点的梯度下降，而是一次随机选取一个误分类点使其梯度下降。<br>假设误分类点集合M是固定的，那么损失函数的梯度为</p>
+<p>$${\nabla}_w (w)L(w,b)=-\sum_{x_i\in M}y_i{x_i}$$</p>
+<!-- toc -->
+<h3 id="数据集的线性可分性"><a href="#数据集的线性可分性" class="headerlink" title="数据集的线性可分性"></a>数据集的线性可分性</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<!-- toc -->
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你支持我买服务器<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -268,61 +333,177 @@
 		</ul>
 	</div>
 
+      
+
+
+      
+      
           
+  <!-- JiaThis Button BEGIN -->
+  <style type="text/css">
+  .bd_weixin_popup_foot{
+    display: none;
+    height:0;
+  }
+  .bd_weixin_popup{
+    height: auto !important;
+    padding-bottom: 0;
+  }
+  .bd_weixin_popup_bg {
+    position: fixed;
+    width: 100% !important;
+    height: 100% !important;
+    background: #000;
+    opacity: .7;
+    filter: alpha(opacity=50);
+    left: 0 !important;
+    top: 0 !important
+ }
+ .custome_share a{
+    display:inline-block;
+    float: left;
+    background: #999;
+    font-size: 18px !important;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 0;
+    text-align: center;
+    border-radius: 50%;
+    background: rgba(128,128,128,.9);
+    margin:0 0 0 8px;
+ }
+ .bdshare-button-style1-16 a:hover{
+  color: white !important;
+  opacity: 0.7;
+ }
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+  </style>
+  <div class="custome_share">
+  <div class="bdsharebuttonbox" style="float: right;">
+    <a  class="icon-weixin" data-cmd="weixin" title="分享到微信" style="background:#4caf50;
+ border:1px solid #4caf50"></a>
+    <a  class="icon-qzone" data-cmd="qzone" title="分享到QQ空间" style="background:#FBCE00;
+ border:1px solid #FBCE00"></a>
+    <a  class="icon-weibo" data-cmd="tsina" title="分享到新浪微博" style="background:#E6162D;
+ border:1px solid #E6162D"></a>
+    <a  class="icon-douban" data-cmd="douban" title="分享到豆瓣网" style="background:#06c611;
+ border:1px solid #06c611"></a>
+    <a  class="fa fa-ellipsis-h" data-cmd="more" style="background:#afb6ca;
+ border:1px solid #afb6ca"></a>
+  </div>
+  </div>
+  <script>
+    window._bd_share_config={
+      "common":{
+        "bdSnsKey":{},
+        "bdText":"",
+        "bdMini":"2",
+        "bdMiniList":false,
+        "bdPic":"",
+        "bdStyle":"1",
+        "bdSize":"16"
+      },
+      "share":{},
+      
+      
+    };
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+    <!-- JiaThis Button END -->
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/04/resume/" class="archive-article-date">
-  	<time datetime="2017-12-04T02:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/04/resume/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">心得</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/04/resume/">心得</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-			
-        		<li class="article-tag-list-item">
-        			<a href="/categories/传感网//" class="article-tag-list-link color4">传感网</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <span>文章目录</span>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#感知机模型"><span class="toc-number">1.</span> <span class="toc-text">感知机模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感知机学习策略"><span class="toc-number">2.</span> <span class="toc-text">感知机学习策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感知机学习算法"><span class="toc-number">3.</span> <span class="toc-text">感知机学习算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据集的线性可分性"><span class="toc-number">3.1.</span> <span class="toc-text">数据集的线性可分性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">3.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">3.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">3.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
+        
+    </div>
+</aside>
+
+
+
+
+ 
+  <!-- livere BEGIN -->
+<div id="comments" class="article article-type-post ">
+  <header id="commentstitle" class="article-header">
+    <h1 class="article-title" itemprop="name">说点什么吧</h1>
+  </header>
+  <div id="commentsbody" class="article-entry">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjA4MS84NjQ1" style="margin-left: -5px;margin-right: -5px;">
+    <script type="text/javascript">
+    (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+    </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
   </div>
-</article>
-  
-  
-    </div></section>
+</div>
+
+
+<!-- livere END -->
   
 
-    
+  
+  
+  
+
+  
+
+  
+
+  
+
 
 
           </div>
@@ -353,8 +534,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

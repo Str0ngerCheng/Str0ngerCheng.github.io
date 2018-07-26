@@ -1612,8 +1612,8 @@ pre .css~* .id,pre .id {
  width:14px;
  height:14px;
  position:absolute;
- margin-top: -10px;
- left: 2px;
+ margin-top: -8px;
+ left:2px;
  -webkit-transform:translateY(-50%);
  border-radius:100%;
  background-color:#91c0f1;
